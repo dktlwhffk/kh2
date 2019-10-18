@@ -2,7 +2,7 @@ package variable;
 
 import java.lang.*;
 
-public class Test2 {
+public class Test02 {
 	public static void main (String [] asrg) {
 		
 		int minute = 135;
