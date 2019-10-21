@@ -37,7 +37,6 @@ public class Test03 {
 		 * boolean adult = 나이 >= 20;
 		 * sysout(adult);
 		 */
-	
-		
+			
 	}
 }
