@@ -31,5 +31,6 @@ public class Test11 {
 		
 		System.out.println((int)(price)+"원");
 		System.out.println(41000*25/100);
+		
 	}
 }
