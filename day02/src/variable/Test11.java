@@ -26,21 +26,6 @@ public class Test11 {
 		double discount = (1-(0.01*percent));
 		double price = ((a*x)+(t*y))*(discount);
 		
-//--------------------------------------------------------------		
-//		성인 인원 수: a          성인 영화 요금: x
-//		청소년 인원 수: t        청소년 영화 요금: y
-//		제휴카드 할인률: percent      할인률 적용 식: discount
-//      최종 요금: price
-//--------------------------------------------------------------
-		
-		int a = 2;
-		int t = 3;
-		int x = 10000;
-		int y = 7000;
-		int percent = 25;
-		double discount = (1-(0.01*percent));
-		double price = ((a*x)+(t*y))*(discount);
-		
 		System.out.println((int)(price)+"원");
 		
 	}
