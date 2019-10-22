@@ -13,10 +13,8 @@ public class Test05 {
 		
 		sc.close();
 		
-		
 		int a = n1-n2;
 		int b = n2-n1;
-		int zero = n1=n2;
 		
 		if (a>0) {
 			System.out.println(a);
