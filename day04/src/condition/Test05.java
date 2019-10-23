@@ -16,7 +16,7 @@ public class Test05 {
 		int a = n1-n2;
 		int b = n2-n1;
 		
-		if (a>0) {
+		if (a>=0) {
 			System.out.println(a);
 		}
 		if (a<0) {
