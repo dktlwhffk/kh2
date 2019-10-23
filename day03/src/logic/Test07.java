@@ -13,7 +13,7 @@ public class Test07 {
 		
 		boolean result = 14>age || 20<=age;
 //		boolean result = !(청소년입니까)
-		boolean result1 = !(age>=14&&age<20);
+//		boolean result1 = !(age>=14&&age<20);
 		
 		System.out.println(result);
 		
