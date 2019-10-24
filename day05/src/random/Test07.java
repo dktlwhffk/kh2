@@ -1,7 +1,8 @@
 package random;
 
-import java.lang.*;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Test07 {
 	public static void main(String[] asrg) {
