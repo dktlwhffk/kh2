@@ -10,12 +10,12 @@ public class Test08 {
 
 		int total=10;
 		int count=10;
-		int day=1;
+//		int day=1;
 		
 		for (int i=1; i<=30; i++) {				
 			
 			if(i>=2) {
-				day+=1; count+=4; total+=count;		
+				 count+=4; total+=count;		
 			}
 			System.out.println(i+" 일"+" "+count+"개");
 		}
