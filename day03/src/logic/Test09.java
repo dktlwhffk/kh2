@@ -22,7 +22,16 @@ public class Test09 {
 		boolean r3=a==b&&++a>b;
 		boolean r4=a==b&&++a>b;
 		boolean r5=a==b&&++a>b;
-
+		
+		double n = 11.23;
+		boolean test1 = n >= 10 || n <=12;
+		boolean test2 = n >= 10 || n >=12;
+		boolean test3 = n <= 10 || n <=12;
+		boolean test4 = n <= 10 || n >=12;
+		System.out.println(test4);
+		
+		
+		
 		System.out.println(r1);
 		System.out.println(r2);
 		System.out.println(r3);
