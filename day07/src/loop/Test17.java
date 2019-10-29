@@ -12,9 +12,10 @@ public class Test17 {
         int n = r.nextInt(1000) + 1;
 //        System.out.println(n); 랜덤으로 뽑힌 수
  
-        int count = 10;
         Scanner sc = new Scanner(System.in);
         System.out.println("숫자를 입력하세요!");
+        
+        int count = 10;
         for (int i = 1; i <= count; count--) {
         int player = sc.nextInt();
         if (n == player) {

@@ -1,6 +1,5 @@
 package loop;
-import java.lang.*;
-import java.util.*;
+import java.util.Scanner;
 public class Test18 {
 	public static void main(String[] asrg) {
 //		소수 찾기 프로그램
@@ -16,15 +15,16 @@ public class Test18 {
 	int n = sc.nextInt();
 	int count=0; //약분 가능한 개수에 대한 변수
 	
-	for(int i=1; i<=n; i++) {
+	for(int i=2; i*i<n; i++) {
 		if(n%i==0) {
 			count++;
+			break;
 		}
 	}
-	if (count==2) {
+	if (count==0) {
 		System.out.println("소수입니다."); //약수가 2개 == 소수
 	}
-	else if(count>2){
+	else if(count>0){
 		System.out.println("합성수입니다."); 
 	}
 	else {
