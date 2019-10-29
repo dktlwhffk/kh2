@@ -4,7 +4,7 @@ import java.util.*;
 public class Test13 {
 	public static void main(String[] asrg) {
 //		과자이름 5개 저장 = 치토스, 허니버터칩, 새우깡, 프링글스, 스윙칩
-		String x;
+		
 		String[]a=new String[] {"치토스","허니버터칩","새우깡","프링글스","스윙칩"};
 		
 //		4개일 때 2번 바꿈 5개일때 2번 바꿈 6개일 때 3번 바꿈 7개일 때 3번 바꿈 n개일 때 n/2번 바꿈
