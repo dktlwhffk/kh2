@@ -34,6 +34,6 @@ public class Test15 {
 		System.out.println("3이 나온 경우= "+countthree);
 		System.out.println("4가 나온 경우= "+countfour);
 		System.out.println("5가 나온 경우= "+countfive);
-		System.out.println("6이 나온 경우= "+countsix);
+//		System.out.println("6이 나온 경우= "+countsix);
 	}
 }
