@@ -18,17 +18,18 @@ public class Test01 {
 		Cafe c=new Cafe();
 		Cafe d=new Cafe();
 		
-		double discount = 0.9;
+//		int discount = (90/100);
+	
 		
-		a.set ("아메리카노",1800*discount,"음료","행사상품");
-		b.set("프라푸치노", 3500,"음료", "행사상품 아님");
-		c.set("파니니", 2800*discount, "식사", "행사상품");
-		d.set("크로크무슈", 3300, "식사", "행사상품 아님");
+		a.set ("아메리카노",1800,"음료",true);
+		b.set("프라푸치노", 3500,"음료", false);
+		c.set("파니니", 2800, "식사", true);
+		d.set("크로크무슈", 3300, "식사", false);
 		
 		a.print();
 		b.print();
 		c.print();
 		d.print();
-		System.out.println("비고: 행사상품은 10% 할인가 적용");
+//		System.out.println("비고: 행사상품은 10% 할인가 적용");
 	}
 }
