@@ -22,5 +22,7 @@ public class Student {
 		this.score1 = score1;
 		this.score2 = score2;
 		this.score3 = score3;
+		int total = score1+score2+score3;
+		int avg = total/3;
 	}
 }
