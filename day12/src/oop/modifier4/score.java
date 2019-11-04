@@ -40,16 +40,19 @@ int getEnglish() {
 int getMath() {
 	return this.math;
 }
+public int getTotal() {
+	return this.korean+this.english+this.math;
+}
 void print() {
-	int total=this.korean+this.english+this.math;
-	int average=total/3;
+//	int total=this.korean+this.english+this.math;
+//	int average=total/3;
 	System.out.println("이름: "+this.getName());
 	System.out.println("국어점수: "+this.getKorean());
 	System.out.println("영어점수: "+this.getEnglish());
 	System.out.println("수학점수: "+this.getMath());
-	System.out.println("총점: "+total);
-	System.out.println("평균: "+average);
-	if(average>=60) {
+	System.out.println("총점: "+this.getTotal());
+	System.out.println("평균: "+this.getTotal()/3);
+	if(this.getTotal()/3.0>=60) {
 		System.out.println("합격!");
 	}else {
 		System.out.println("불합격!");
