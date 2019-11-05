@@ -7,4 +7,9 @@ public class Iphone11 extends Iphone{
 	public void camera() {
 		System.out.println("아이폰11의 선명한 카메라로 촬영!");
 	}
+	
+//	@Override 하단 코드의 행위를 강제하는 역할(명찰)
+		public void power() {
+			System.out.println("내사진을 띄우며 전원 기능을 사용한다!");
+		}
 }
