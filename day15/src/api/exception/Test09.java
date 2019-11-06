@@ -7,6 +7,5 @@ public class Test09 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		System.out.println();
 	}
 }
