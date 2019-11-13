@@ -20,12 +20,13 @@ commit;
 
 select * from subject_price;
 -----------------------------------------------------------------------------------------------------------------------
+drop table naver_member;
 create table naver_member(
 id varchar2(60) primary key,
 pw varchar2(60) not null,
 pwcheck varchar2(60) not null,
 name varchar2(120) not null,
-birth date not null,
+birth date not null check(to_date('19190101','yyyymmdd')<=birth and birth<=TO_DATE('2019-01-01', 'YYYY-MM-DD')),
 gender varchar(6) not null check(gender in('남자','여자')),
 confirm_email varchar2(120) not null,
 phone_nation varchar2(40) not null,
