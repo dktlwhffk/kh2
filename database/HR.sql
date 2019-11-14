@@ -237,6 +237,145 @@ select*from(
 select* from countries;
 select*from employees;
 select*from locations;
+--직역: 관리자 id와 count를 employees에서 manager id를 기준으로 묶어서 출력
+select manager_id, count(*) from employees group by manager_id;
+--입사연도별 작업자 수
+--주의: group by에서는 별칭이 작동하지 않음
+select extract(year from hire_date) 연도, count(*) from employees 
+group by extract(year from hire_date) 
+order by 연도 asc;
+
+--만약 별칭을 사용하고 싶다면 서브쿼리를 이용하여 별칭을 항목으로 생성
+select 연도, count(*) from(
+    select E.*, extract(year from hire_date) 연도 from employees E
+) 
+group by 연도
+order by 연도 asc;
+
+--2005년 이후의 연도별 고용 직원 수를 보고싶다면.. 그룹조건(having)을 사용
+select 연도, count(*) from(
+    select E.*, extract(year from hire_date) 연도 from employees E
+) 
+group by 연도 having 연도 >=2005
+order by 연도 asc;
+
+--가을(9,10,11)에 고용된 작업자들의 월별 연봉 평균과 최대,최소를 구하여 출력
+
+
+--첫번째 풀이: 한번에 그룹화 하여 출력
+select
+    extract(month from hire_date) 월,
+    round(avg(salary),2)as 평균연봉,
+    min(salary)as 최소연봉,
+    max(salary)as 최대연봉
+from
+    employees
+group by
+    extract(month from hire_date)
+having 
+extract(month from hire_date) between 9 and 11
+order by
+    월;
+    
+    --두번째 풀이: 서브쿼리를 이용하여 중복코드 최소화
+select 
+    월, 
+    round(avg(salary),2)as 평균연봉,
+    min(salary)as 최소연봉,
+    max(salary)as 최대연봉
+from(
+    select extract(month from hire_date)월,E.* from employees E
+)
+group by 월 having 월 between 9 and 11
+order by 월;
+
+
+select
+    연도, 
+    월,
+    count(*) as 개수,
+    sum(salary) as 급여총액, 
+    avg(salary) as 연봉평균, 
+    max(salary) as 연봉최대,
+    min(salary) as "연봉 최소"
+from(
+    select extract(year from hire_date)연도, extract(month from hire_date)월, E.*from employees E 
+)
+group by 연도, 월
+order by 연도,월
+;
+--------------------------------------------------------------------------------------------------------------------------------------------
+--외래키(Foreign Key)
+--  외부 테이블과의 관계를 설정하기 위한 제약조건(종속관계)
+--  상위 테이블에 존재하는 값만 설정할 수 있도록 처리됨
+--------------------------------------------------------------------------------------------------------------------------------------------
+--테스트 할 테이블: 학원과 수강생 테이블
+create table academy(
+no number primary key,
+name varchar2(30) not null,
+area varchar2(30) not null
+);
+
+drop table student;
+create table student(
+no number primary key,
+name varchar2(21) not null,
+--외래키 설정
+-- 컬럼명 academy_no constraint 별칭 references 대상
+academy_no constraint fk_student_academy references academy(no)
+);
+
+--데이터 추가: 학원을 등록해야 학생 등록 가능
+insert into academy values(1,'KH정보교육원','당산');
+insert into academy values(2,'KH정보교육원','강남');
+insert into academy values(3,'KH정보교육원','종로');
+
+insert into student values(1,'김기열',1);
+insert into student values(2,'이학준',1);
+insert into student values(3,'박성애',1);
+insert into student values(4,'안소희',2);
+insert into student values(5,'이아름',2);
+
+select*from student; --학생
+select*from academy; --학원
+commit;
+--inner join : 연결된 대상만 조회하고 싶은 경우
+
+-- select * from academy + student;
+select 
+    A.name 학원명,
+    A.area 지역,
+    S.name 학생명
+from 
+    academy A
+        inner join student S 
+            on S.academy_no=A.no;
+            
+--outer join: 연결되지 않아도 출력
+select 
+    A.name 학원명,
+    A.area 지역,
+    S.name 학생명
+from 
+    academy A
+        left outer join student S 
+            on S.academy_no=A.no;
+
+-- 학원별 학생수를 구해보자
+select 
+    A.name, A.area, count(S.no)
+from
+    academy A inner join student S on A.no=S.academy_no
+group by A.name, A.area;
+
+select 
+    A.name, A.area, count(S.no)
+from
+    academy A left outer join student S on A.no=S.academy_no
+group by A.name, A.area;
+
+
+
 
 
 
