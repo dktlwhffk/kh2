@@ -374,7 +374,7 @@ from
     academy A left outer join student S on A.no=S.academy_no
 group by A.name, A.area;
 
-
+commit;
 
 
 

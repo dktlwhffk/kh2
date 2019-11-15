@@ -102,12 +102,50 @@ from
 --그룹문제 5번: 연도별 취소된 제품 주문 건수
 
 --그룹문제 6번: 연도별 취소된 제품 주문 수량 합계
+select
+    연도,
+    sum(quantity) 취소수량
+from
+    (
+        select extract(year from order_date)연도, O.*,OI.*
+        from
+            orders O
+                left outer join order_items OI on O.order_id = OI.order_id
+        where
+            O.status = 'Canceled'
+    )
+group by 연도 
+order by 연도 asc;
 
---그룹문제 7번: 별 전체 제품 주문 개수(합계)
+--그룹문제 7번: 연/월별 전체 제품 주문 개수(합계)
+select 
+    --extract(year from order_date)연, extract(month from order_date)월, sum(OI.quantity)합계
+    기간,
+     sum(quantity) 
+from
+    (
+        select 
+            --extract(year from O.order_date)연, extract(month from O.order_date)월, 
+            to_char(order_date, 'yyyy-mm') 기간,
+            OI.quantity
+        from
+            orders O
+            inner join order_items OI on O.order_id = OI.order_id
+    )
+group by
+    기간
+order by
+    기간;
+    
+--  to_char: 어떠한 값을 문자열로 바꾸는 명령 cf) 자바의 String.valueOf()
+--  사용법: to_char(날짜, 형식)
+
+select to_char(order_date, 'yyyy-mm') 기간 from orders order by order_date;
 
 
 
 
+commit;
 
 
 
