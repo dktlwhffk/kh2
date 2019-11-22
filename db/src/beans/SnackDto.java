@@ -6,6 +6,11 @@ public class SnackDto {
 	private int no;
 	private String name;
 	private int price;
+	@Override
+	public String toString() {
+		return "SnackDto [no=" + no + ", name=" + name + ", price=" + price + ", stock=" + stock + ", keyword="
+				+ keyword + "]";
+	}
 	private int stock;
 	private String keyword;
 	

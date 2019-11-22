@@ -16,14 +16,14 @@ public class SnackDao {
 	}
 
 //
-	public void insert(String name, int price) throws Exception{
+	public void insert(String name, int price, int stock) throws Exception{
 		Connection con = this.getConnection();
 		
-		String sql = "insert into snack values(snack_seq.nextval,?,?,0)";
+		String sql = "insert into snack values(snack_seq.nextval,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, name);
 		ps.setInt(2, price);
-		
+		ps.setInt(3, stock);
 		ps.execute();
 	}//상품명 상품판매가 입력 메소드
 
