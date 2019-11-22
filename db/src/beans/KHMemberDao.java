@@ -98,14 +98,14 @@ public class KHMemberDao {
 //	이름 : search
 //	매개변수 : 검색어(String)
 //	반환형 : 회원목록(List<KHMemberDto>)
-	public List<KHMemberDto> search(String keyword) throws Exception{
+	public List<KHMemberDto> search(String name) throws Exception{
 		Connection con = getConnection();
 		
 		String sql = "select * from kh_member "
 							+ "where name like '%'||?||'%' "
 							+ "order by name asc";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, keyword);
+		ps.setString(1, name);
 		ResultSet rs = ps.executeQuery();
 		
 //		ResultSet --> List
@@ -133,14 +133,13 @@ public class KHMemberDao {
 //	이름 : login
 //	매개변수 : (String, String) or (KHMemberDto)
 //	반환형 : boolean
-//	public boolean login(String id, String pw) throws Exception{
-	public boolean login(KHMemberDto dto) throws Exception{
+	public boolean login(String id,String pw) throws Exception{
 		Connection con = getConnection();
 		
 		String sql = "select * from kh_member where id = ? and pw = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, dto.getId());
-		ps.setString(2, dto.getPw());
+		ps.setString(1, id);
+		ps.setString(2, pw);
 		ResultSet rs = ps.executeQuery();//결과 개수는 0 or 1 : rs.next()로 파악 가능
 		
 		boolean result = rs.next();
@@ -148,12 +147,6 @@ public class KHMemberDao {
 		con.close();
 		
 		return result;
-//		if(result == true) {
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
 	}
 	
 	

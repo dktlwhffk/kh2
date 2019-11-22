@@ -40,11 +40,5 @@ public class SearchServlet extends HttpServlet{
 			resp.sendError(500);
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
 	}
 }

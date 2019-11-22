@@ -3,6 +3,12 @@ package beans;
 public class KHMemberDto {
 	private int no, point;
 	private String name, id, pw, joindate;
+	
+	@Override
+	
+	public String toString() {
+		return "KHMemberDto [no=" + no + ", point=" + point + ", name=" + name + ", id=" + id + "]";
+	}
 	public int getNo() {
 		return no;
 	}
