@@ -10,7 +10,7 @@
 <div align = "center">
 <h1> 구구단 테이블</h1>
 <table border = "1" width="50%">
-	<thead>
+	<thead bgcolor = "orange">
 		<tr>
 			<th>2단</th>
 			<th>3단</th>
@@ -22,12 +22,12 @@
 			<th>9단</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody align = "center">
 	<% for(int i =1; i<10; i++){%>
 		<tr>
 			<br>
 		<%for(int j = 2; j<10; j++){%>
-			<td><%=j%>*<%=i%>=<%=i*j %></td>
+			<td><%=j%> X <%=i%>=<%=i*j %></td>
 <%}}%>
 		</tr>		
 	</tbody>
