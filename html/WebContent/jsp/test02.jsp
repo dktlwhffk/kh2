@@ -23,17 +23,16 @@
 		</tr>
 	</thead>
 	<tbody>
-		
+	<% for(int i =1; i<10; i++){%>
+		<tr>
+			<br>
+		<%for(int j = 2; j<10; j++){%>
+			<td><%=j%>*<%=i%>=<%=i*j %></td>
+<%}}%>
+		</tr>		
 	</tbody>
 </table>
-<h1>
-	<% for(int i =1; i<10; i++){%>
-			<br>		
-		<%for(int j = 2; j<10; j++){%>
-			<%=j%>*<%=i %>=<%=i*j %> 
-	
-<%}}%>
-</h1>
+
 
 </div>
 </body>
