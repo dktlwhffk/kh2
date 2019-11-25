@@ -87,7 +87,7 @@ public class SnackDao {
 		return list;
 	}
 
-	public List<SnackDto> search(String keyword) throws Exception {
+	public List<SnackDto> search(String keyword1) throws Exception {
 		Connection con = this.getConnection();
 		String sql = "select*from snack where name like '%'||?||'%'";
 		PreparedStatement ps = con.prepareStatement(sql);
@@ -95,7 +95,7 @@ public class SnackDao {
 		SnackDto dto1 = new SnackDto();
 //		String keyword = "a";
 //		ps.setString(1, dto1.getKeyword());
-		ps.setString(1, keyword);
+		ps.setString(1, keyword1);
 //		ps.execute();
 		
 		ResultSet rs = ps.executeQuery();
@@ -103,14 +103,14 @@ public class SnackDao {
 
 		while (rs.next()) {
 			SnackDto dto = new SnackDto();
-			int no = rs.getInt("no");
-			dto.setNo(no);
+//			int no = rs.getInt("no");
+//			dto.setNo(no);
 			String name = rs.getString("name");
 			dto.setName(name);
 			int price = rs.getInt("price");
 			dto.setPrice(price);
-			int stock = rs.getInt("stock");
-			dto.setStock(stock);
+//			int stock = rs.getInt("stock");
+//			dto.setStock(stock);
 
 			search.add(dto);
 		}

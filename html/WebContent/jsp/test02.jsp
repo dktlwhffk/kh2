@@ -22,18 +22,17 @@
 			<th>9단</th>
 		</tr>
 	</thead>
+	<br>
 	<tbody align = "center">
 	<% for(int i =1; i<10; i++){%>
 		<tr>
-			<br>
 		<%for(int j = 2; j<10; j++){%>
 			<td><%=j%> X <%=i%>=<%=i*j %></td>
-<%}}%>
-		</tr>		
+		<%}%>
+	</tr>
+<%}%>		
 	</tbody>
 </table>
-
-
 </div>
 </body>
 </html>

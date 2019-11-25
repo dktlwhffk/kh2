@@ -27,12 +27,12 @@ public class KHMemberDao {
 		Connection con = this.getConnection();								//연결하세요
 		
 		String sql = "insert into kh_member values("
-						+ "kh_member_seq.nextval, ?, ?, ?, ?, sysdate)";	//전송명령
+						+ "kh_member_seq.nextval, ?, ?, ?, 0, sysdate)";	//전송명령
 		PreparedStatement ps = con.prepareStatement(sql);			//전송도구 생성
 		ps.setString(1, dto.getName());											//이름 설정
 		ps.setString(2, dto.getId());													//아이디 설정
 		ps.setString(3, dto.getPw());												//비밀번호 설정
-		ps.setInt(4, dto.getPoint());
+		
 		ps.execute();																		//실행
 		
 		con.close();
