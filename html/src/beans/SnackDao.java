@@ -117,4 +117,49 @@ public class SnackDao {
 		con.close();
 		return search;
 	}
+//수정기능: 번호를 이용하여 모든 정보를 수정
+	public boolean edit(SnackDto dto) throws Exception {
+		
+		Connection con = getConnection();
+		
+		String sql="update snack set name=?, price=?, stock=? where no=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, dto.getName());
+		ps.setInt(2, dto.getPrice());
+		ps.setInt(3, dto.getStock());
+		ps.setInt(4, dto.getNo());
+		
+		int result = ps.executeUpdate();
+		
+		con.close();
+		return result>0;
+	}
+//	단일조회 기능
+//	이름: get
+//	매개변수: 번호(int)
+//	반환형: 과자정보(snackdto)
+	public SnackDto get(int no) throws Exception{
+		
+		Connection con = getConnection();
+		
+		String sql = "select*from Snack where no=?";
+		
+		PreparedStatement ps =  con.prepareStatement(sql);
+		ps.setInt(1, no);
+		ResultSet rs = ps.executeQuery();
+		SnackDto dto;
+		if(rs.next()) {
+			dto = new SnackDto();
+		
+			dto.setNo(rs.getInt("no"));	
+			dto.setName(rs.getString("name"));
+			dto.setPrice(rs.getInt("price"));
+			dto.setStock(rs.getInt("stock"));
+			
+		} else {
+			dto=null;
+		}
+		con.close();
+		return dto;		
+	}
 }

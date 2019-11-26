@@ -155,12 +155,12 @@ public class KHMemberDao {
 //	매개변수 : 아이디(String), 비밀번호(String), 바꿀비밀번호(String)
 //	반환형 : boolean
 	
-	public boolean changePassword(String id, String pw, String newPw) throws Exception{
+	public boolean changePassword(String id, String pw, String newpw) throws Exception{
 		Connection con = getConnection();
 		
-		String sql = "update kh_member set pw = ? where id = ? and pw = ?";
+		String sql = "update kh_member set newpw = ? where id = ? and pw = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, newPw);
+		ps.setString(1, newpw);
 		ps.setString(2, id);
 		ps.setString(3, pw);
 		
