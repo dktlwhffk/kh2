@@ -11,6 +11,17 @@
 <!-- 				-기타 사이트맵 -->
 <!-- 				-연락처 -->
 					<h3>KH 정보교육원 과정평가형 정보처리산업기사 과정 &copy;</h3>
+					
+<!-- 						홈페이지 세션 상태값 출력 -->
+					<h5>id=<%=session.getAttribute("id") %></h5>
+					<h5>session id = <%=session.getId() %></h5>
+					
+					<%
+						String id =(String)session.getAttribute("id");
+						String grade = (String)session.getAttribute("grade");
+					%>
+					<h5>id = <%=id %>, grade = <%=grade %></h5>
+					<h5>로그인 상태 = <%=id != null %></h5>
 				</th>
 			</tr>
 		</tbody>

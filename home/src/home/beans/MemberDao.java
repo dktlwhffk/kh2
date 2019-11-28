@@ -51,4 +51,53 @@ public class MemberDao {
 		con.close();
 		System.out.println("등록완료");
 	}
+//	아이디 찾기 기능
+	public String findid(String name, String phone) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "select id from member where name = ? and phone = ?";
+		
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, name);
+		ps.setString(2, phone);
+		
+		ResultSet rs = ps.executeQuery();
+		String result = null;
+		if(rs.next()) {
+
+			result = rs.getString("id");			
+		}
+		con.close();
+		return result;
+	
+	}
+//	단일조회
+	public MemberDto get(String id) throws Exception{
+		Connection con = getConnection();
+		
+		String sql = "select * from member where id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, id);
+		ResultSet rs = ps.executeQuery(); //많아봐야 1개
+		
+		MemberDto dto;
+		if(rs.next()) {
+			dto = new MemberDto();
+			
+			dto.setId(rs.getString("id"));
+			dto.setPw(rs.getString("Pw"));
+			dto.setName(rs.getString("Name"));
+			dto.setJoindate(rs.getString("Joindate"));
+			dto.setGrade(rs.getString("Grade"));
+			dto.setPhone(rs.getString("Phone"));
+			dto.setPost(rs.getString("Post"));
+			dto.setLast_login(rs.getString("Last_login"));
+			dto.setBasic_addr(rs.getString("Basic_addr"));
+			dto.setExtra_addr(rs.getString("Extra_addr"));
+		} 
+		else {
+			dto = null;
+		}
+		return dto;
+	}
 }

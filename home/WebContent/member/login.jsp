@@ -31,7 +31,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a href="#">아이디 찾기</a><br>
+				<a href="find.jsp">아이디 찾기</a><br>
 				<a href="#">비밀번호 찾기</a><br>
 				<a href="<%=context%>/member/regist.jsp">회원가입</a>
 			</td>

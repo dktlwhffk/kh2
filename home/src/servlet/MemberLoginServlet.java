@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import home.beans.MemberDao;
+import home.beans.MemberDto;
 @WebServlet(urlPatterns = "/member/login.do")
 public class MemberLoginServlet extends HttpServlet{
 	@Override
@@ -23,13 +24,23 @@ public class MemberLoginServlet extends HttpServlet{
 			String pw = req.getParameter("pw");
 //		[2] 데이터베이스에 데이터 전송 및 처리
 			MemberDao dao = new MemberDao();
-//			dao.login(id, pw);
+			
+			MemberDto dto = dao.get(id);
+			dto.setId(id);
+//			dto.setGrade(grade);
 			boolean result = dao.login(id, pw);
 //		[3] 사용자 화면 구현
-			if(result){
+			if(result){//로그인 성공시
+				
+//				session에 아이디와 권한을 저장
+//				session.setAttribute("id", id);
+				req.getSession().setAttribute("id",id);
+				req.getSession().setAttribute("grade", dto.getGrade());
+				
+				
 				resp.sendRedirect(req.getContextPath());
 			}
-			else {
+			else {//로그인 실패시
 				resp.sendRedirect("login.jsp?error");				
 			}
 		}
