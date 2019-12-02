@@ -3,7 +3,7 @@
 
 <jsp:include page="/template/header.jsp"></jsp:include>
 
-<h2>아이디가 이미 사용중입니다.</h2>
-<h3><a href="regist.jsp">다시 입력하러 가기</a></h3>
+<h2>정보가 일치하지 않습니다.</h2>
+<h3><a href="login.jsp">다시 로그인하기</a></h3>
 
 <jsp:include page="/template/footer.jsp"></jsp:include>

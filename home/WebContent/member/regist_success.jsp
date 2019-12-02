@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입성공!</title>
-</head>
-<body>
-<h3><a href = "/home/member/login.jsp">로그인하기</a></h3>
-</body>
-</html>
+
+<jsp:include page="/template/header.jsp"></jsp:include>
+
+<h2>가입이 완료되었습니다.</h2>
+<h3><a href="login.jsp">로그인하기</a></h3>
+
+<jsp:include page="/template/footer.jsp"></jsp:include>

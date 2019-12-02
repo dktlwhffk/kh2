@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입실패</title>
-</head>
-<body>
-<h3>회원가입에 실패하였습니다</h3>
-</body>
-</html>
+
+<jsp:include page="/template/header.jsp"></jsp:include>
+
+<h2>아이디가 이미 사용중입니다.</h2>
+<h3><a href="regist.jsp">다시 입력하러 가기</a></h3>
+
+<jsp:include page="/template/footer.jsp"></jsp:include>

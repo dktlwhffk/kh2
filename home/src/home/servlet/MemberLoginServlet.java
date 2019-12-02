@@ -1,4 +1,4 @@
-package servlet;
+package home.servlet;
 
 import java.io.IOException;
 
@@ -24,7 +24,6 @@ public class MemberLoginServlet extends HttpServlet{
 			String pw = req.getParameter("pw");
 //		[2] 데이터베이스에 데이터 전송 및 처리
 			MemberDao dao = new MemberDao();
-			
 			MemberDto dto = dao.get(id);
 			dto.setId(id);
 //			dto.setGrade(grade);
@@ -34,9 +33,9 @@ public class MemberLoginServlet extends HttpServlet{
 				
 //				session에 아이디와 권한을 저장
 //				session.setAttribute("id", id);
+				dao.updateLastLogin(id);
 				req.getSession().setAttribute("id",id);
 				req.getSession().setAttribute("grade", dto.getGrade());
-				
 				
 				resp.sendRedirect(req.getContextPath());
 			}
