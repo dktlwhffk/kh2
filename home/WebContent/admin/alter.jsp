@@ -23,7 +23,6 @@
 				<th>전화번호</th>
 				<td>
 					<input type="text" name="phone" value="<%=dto.getPhone()%>" required size="11">
-<%-- 					<%=System.out.println(dto.getPhone()) %> --%>
 				</td>
 			</tr>		
 			<tr>

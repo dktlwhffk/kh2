@@ -1,17 +1,36 @@
 package home.beans;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemberDao {
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
+public class MemberDao {
+	
+	//자원을 참조하는 변수 생성(리모컨)
+//	private static DataSource source = context.xml의 자원정보;
+	private static DataSource source;
+	static {
+		//source에 context.xml의 resource정보를 설정
+		//[1]탐색 도구 생성
+		//[2]도구를 이용하여 탐색 후 source에 대입
+		try {
+			InitialContext ctx = new InitialContext();
+			source = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	//연결메소드
 	public Connection getConnection() throws Exception {
-		Class.forName("oracle.jdbc.OracleDriver");
-		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "home", "home");
+		return source.getConnection();
 	}
 
 //	로그인 기능
@@ -101,8 +120,8 @@ public class MemberDao {
 		} else {
 			dto = null;
 		}
-		System.out.println(dto.getPhone());
 		return dto;
+	
 	}
 	
 	//최종 로그인 시각 변경 메소드

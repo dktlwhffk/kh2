@@ -12,19 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebFilter(urlPatterns= {
-			"/member/info.jsp",
-			"/member/change_info.jsp",
-			"/member/change_info.do",
-			"/member/check.do",
-			"/member/check.jsp",
-			"/member/exit.do",
-			"/member/logout.do",
-			"/member/change_pw.jsp",
-			"/member/change_pw.do",
-			"/member/change.pw_result",
-			"/admin/*"
-	})
+//@WebFilter(urlPatterns= {
+//			"/member/info.jsp",
+//			"/member/change_info.jsp",
+//			"/member/change_info.do",
+//			"/member/check.do",
+//			"/member/check.jsp",
+//			"/member/exit.do",
+//			"/member/logout.do",
+//			"/member/change_pw.jsp",
+//			"/member/change_pw.do",
+//			"/member/change.pw_result",
+//			"/admin/*"
+//	})
 public class AdminFilter implements Filter{
 
 	@Override
@@ -35,15 +35,11 @@ public class AdminFilter implements Filter{
 		HttpServletResponse resp = (HttpServletResponse) response;
 		String grade = (String) req.getSession().getAttribute("grade");
 		String id = (String) req.getSession().getAttribute("id");
-		boolean admin = grade != null && grade.equals("관리자");
-		boolean login = id !=null;
+		boolean admin = grade.equals("관리자");
+//		boolean login = id !=null;
 		if(admin) {
 			chain.doFilter(request, response);
 		} 
-		else if(!login){
-			resp.sendRedirect(req.getContextPath()+"/member/login.jsp");
-			System.out.println("로그인 필터 작동중!");
-		}
 		else {
 			resp.sendError(403);
 			System.out.println("어드민 필터 작동중!");
