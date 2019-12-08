@@ -13,6 +13,7 @@ public class BoardDto {
 	private int readcount;
 	private String content;
 	
+	
 	//계층형 게시판과 관련된 값들을 추가
 	private int groupno, superno, depth;
 	

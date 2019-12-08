@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="home.beans.ReplyDto"%>
+<%@page import="home.beans.ReplyDao"%>
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
 <%@page import="home.beans.MemberDto"%>
@@ -13,9 +16,14 @@
 	BoardDao bdao = new BoardDao();
 	BoardDto bdto = bdao.get(no); 
 	
+	ReplyDao rdao = new ReplyDao();
+	ReplyDto rdto = new ReplyDto();
+	
+	List<ReplyDto> list = rdao.getreplylist(no);
 // 	MemberDao mdao = new MemberDao();
 // 	MemberDto mdto = mdao.get(bdto.getWriter());
-
+	
+	
 // 	본인글인지 여부와 관리자인지 여부를 미리 계산
 	String userId = (String)session.getAttribute("id");
 	String grade = (String)session.getAttribute("grade");
@@ -78,18 +86,20 @@
 			<td>
 				<!-- 반복문 사용 -->
 				<table border="1" width="100%">
+					<%for(ReplyDto dto: list){ %>
 					<tr>
 						<th width="100">
-							<img src="http://placehold.it/150x150">
+							<img src="http://placehold.it/30x30">
 						</th>
-						<td>
-							작성자 자리
-							작성일
-							답글
-							<br><br>
-							내용이 나오는 자리
-						</td>
+						<td>댓글번호:<%=dto.getRno() %></td>
+						<td>작성자:<%=dto.getRwriter() %></td>
+						<td>작성날짜:<%=dto.getRdate() %></td>
+						<td align="center"><a href="reply_delete.do?rno=<%=dto.getRno()%>&no=<%=bdto.getNo()%>"><input type = "button" value="댓글삭제"></a></td>
 					</tr>
+					<tr>
+						<td colspan="5" style="word-break:break-all;"><%=dto.getRcontent() %></td>
+					</tr>
+					<%} %>
 				</table>
 				
 			</td>
@@ -97,10 +107,9 @@
 		<!-- 댓글 작성칸이 표시될 자리 -->
 		<tr>
 			<td>
-				<form action="" method="post">
-					<textarea name="" rows="4" cols="100" required></textarea>
-					<a href="/list.jsp?no=<%=bdto.getNo()%>"><input type = "submit" value ="등록"></a>
-						<%System.out.println(bdto.getNo()); %>
+				<form action="reply_insert.do?no=<%=bdto.getNo() %>" method="post">
+					<textarea name="rcontent" rows="4" cols="100" required></textarea>
+					<input type = "submit" value ="댓글등록">
 				</form>
 			</td>
 		</tr>

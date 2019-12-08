@@ -269,4 +269,22 @@ public class BoardDao {
 		
 		return count;
 	}
+//	댓글 수
+	public int replycount(int no) throws Exception{
+		int count;
+		Connection con = getConnection();
+		String sql = "select count(*)from reply where no=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, no);
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			count = rs.getInt(1);			
+		}else {
+			count =0;
+		}
+		con.close();
+		return count;
+	}
+	
 }

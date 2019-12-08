@@ -25,14 +25,14 @@
 	</filter-mapping>
 	
 <!-- 	테스트용이므로 개발 후 삭제할 것 -->
-	<filter>
-		<filter-name>test</filter-name>
-		<filter-class>home.filter.TestAdminFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>test</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+<!-- 	<filter> -->
+<!-- 		<filter-name>test</filter-name> -->
+<!-- 		<filter-class>home.filter.TestAdminFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>test</filter-name> -->
+<!-- 		<url-pattern>/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
 	
 	<filter>
 		<filter-name>loginFilter</filter-name>

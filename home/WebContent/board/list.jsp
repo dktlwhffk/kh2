@@ -1,5 +1,4 @@
 <%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="home.beans.BoardDto"%>
 <%@page import="home.beans.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
