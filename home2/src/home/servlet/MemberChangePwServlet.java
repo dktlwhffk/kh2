@@ -8,23 +8,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import home.beans.BoardDao;
-import home.beans.ReplyDao;
+import home.beans.MemberDao;
 
-@WebServlet(urlPatterns="/board/reply_delete.do")
-public class ReplyDeleteServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/member/change_pw.do")
+public class MemberChangePwServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			int no = Integer.parseInt(req.getParameter("no"));
-			int rno = Integer.parseInt(req.getParameter("rno")); 
-			ReplyDao dao = new ReplyDao();
-			dao.replyDelete(rno);
+//			[1] 수신
+			req.setCharacterEncoding("UTF-8");
+			String pw = req.getParameter("pw");
 			
-			BoardDao bdao = new BoardDao();
-			bdao.calculate(no);
+			String id = (String) req.getSession().getAttribute("id");
 			
-			resp.sendRedirect("/home/board/content.jsp?no="+no);
+//			[2] 처리
+			MemberDao dao = new MemberDao();
+			dao.changePassword(id, pw);
+			
+//			[3] 이동
+			resp.sendRedirect("change_pw_result.jsp");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -32,3 +34,11 @@ public class ReplyDeleteServlet extends HttpServlet{
 		}
 	}
 }
+
+
+
+
+
+
+
+
