@@ -36,7 +36,7 @@ public class ReplyInsertServlet extends HttpServlet{
 			BoardDao bdao = new BoardDao();
 			bdao.calculate(no);
 			
-			resp.sendRedirect("/home/board/content.jsp?no="+no);
+			resp.sendRedirect(req.getContextPath()+"/board/content.jsp?no="+no);
 		}
 		catch(Exception e) {
 			e.printStackTrace();

@@ -43,17 +43,19 @@
 	
 %>
 <jsp:include page="/template/header.jsp"></jsp:include>
-<div align = "center">
-	<h2>게시판</h2>
-	
-	<table border = "1" width = "100%">
+
+<article class="w-100">
+	<div class="row">
+		<h2>자유게시판</h2>
+	</div>
+	<div class="row">
+		<small>글은 자신의 인격입니다</small>
+	</div>
+	<div class="row">
+		<table class="table">
 		<thead>
 		<tr>
-				<th>rn</th>
 				<th>번호</th>
-				<th>그룹</th>
-				<th>상위</th>
-				<th>차수</th>
 				<th width="40%">제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
@@ -63,11 +65,7 @@
 		<tbody align = "center">
 			<%for(BoardDto dto : list) {	%>
 		<tr>
-			<td><%=dto.getRn() %></td>
 			<td><%=dto.getNo() %></td>
-			<td><%=dto.getGroupno() %></td>
-			<td><%=dto.getSuperno() %></td>
-			<td><%=dto.getDepth() %></td>	
 			<td align="left">
 
 					<!-- 제목을 depth번 만큼 띄어쓰기 후 출력 -->
@@ -105,25 +103,30 @@
 		</tr>
 		<%} %>
 		</tbody>
-	</table>
-	
-	<!-- 네비게이터(navigator) -->
-	<jsp:include page = "/template/navigator.jsp">
+		</table>
+	</div>
+	<div class="row">
+		<a href="write.jsp"><input class="btn1" type = "button" value = "글작성"></a>
+	</div>
+	<div class="row">
+		<jsp:include page = "/template/navigator.jsp">
 		<jsp:param value="<%=pno %>" name="pno"/>
 		<jsp:param value="<%=count %>" name="count"/>
 		<jsp:param value="<%=navsize %>" name="navsize"/>
 		<jsp:param value="<%=pagesize %>" name="pagesize"/>
 	</jsp:include>
-	<!-- 네비게이터 종료 -->
-	
-	<a href="write.jsp"><input type = "submit" value = "글작성"></a>
-	<form action ="list.jsp" method="get">
-	<select name = "type">
-		<option value ="title">제목</option>
-		<option value = "writer">작성자</option>
-	</select>
-	<input type="search" name ="keyword" placeholder="검색어" required>
-	<input type ="submit" value="검색">
-	</form>
-</div>
+	</div>
+	<div class="row">
+		<form action ="list.jsp" method="get">
+			<select class=input-item name = "type">
+				<option value ="title">제목</option>
+				<option value = "writer">작성자</option>
+			</select>
+				<input class="input-item" type="search" name ="keyword" placeholder="검색어" required>
+				<input class="btn1" type ="button" value="검색">
+		</form>
+	</div>
+</article>
+
+
 <jsp:include page="/template/footer.jsp"></jsp:include>
