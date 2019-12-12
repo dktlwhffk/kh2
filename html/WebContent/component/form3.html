@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
+</head>
+<body>
+	<!-- 사용자에게 아이디/비밀번호를 입력할 수 있는 창을 보여주고 정보를 입력한 뒤 
+전송하면 로그인 처리를 수행하는 페이지에서 판정한 뒤 출력하도록 연결하세요 -->
+	<form action="/db/kh_login" method="post">
+
+		<input type="text" name="id" placeholder="아이디" required><br>
+		<br> <input type="password" name="pw" placeholder="비밀번호" required><br>
+		<br> <input type="submit" value="접속">
+
+		<!-- 	초기화 버튼 -->
+		<!-- 		<input type = "reset"> -->
+	</form>
+</body>
+</html>
