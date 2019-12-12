@@ -1,2 +1,2 @@
-grant create view to sample;
-select*from dba_roles;
+create user home identified by home;
+grant connect, resource, create view to home;
