@@ -5,7 +5,7 @@
 			<div class="row-empty"></div>
         </section>
         </div>
-        <footer align="center"><h3>KH 정보교육원 과정평가형 정보처리산업기사 과정 &copy;</h3></footer>
+        <footer align="center"><h3>KH 정보교육원 과정평가형 정보처리산업기사 &copy;</h3></footer>
     </main>
 </body>
 </html>
