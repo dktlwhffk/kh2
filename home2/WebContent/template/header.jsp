@@ -12,7 +12,7 @@
 </head>
 <body >
     <main>
-        <header align="center"><img src = "<%=request.getContextPath() %>/image/mainlogo.jpg" width = "100" height = "100" ></header>
+        <header align="center">b<img src = "<%=request.getContextPath() %>/image/mainlogo.jpg" width = "100" height = "100" ></header>
         <nav>
             <jsp:include page="/template/menu.jsp"></jsp:include>
         </nav>
