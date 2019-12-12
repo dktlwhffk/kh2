@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모달(Modal)창 만들기</title>
+    <style>
+        .modal{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+/*            background-color: black;*/
+            background-color:rgba(0, 0, 0, 0.5);
+            
+/*            display: none;*/
+        }
+        
+        .modal > .modal-view{
+            position: fixed;
+            width:300px;
+            height:400px;
+            background-color: white;
+            
+            /* 가운데 배치 */
+            top:50%;
+            left:50%;
+            margin-left: -150px;
+            margin-top: -200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+    <h1>테스트 글자... 클릭하면 안돼요!</h1>
+
+    <!-- 모달화면 구현 -->
+    <div class="modal">
+        <div class="modal-view"></div>        
+    </div>
+</body>
+</html>

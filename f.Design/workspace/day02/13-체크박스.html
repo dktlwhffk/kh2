@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>체크박스의 활용</title>
+    <style>
+        input[type=checkbox]{
+            display: none;
+        }
+        /*체크박스 뒤에 있는 h1만 선택: 연계선택자*/
+        input[type=checkbox]+h1{
+            display: none;
+        }
+        input[type=checkbox]:checked+h1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <label for="show">눌러보세요</label>
+    <input id="show" type="checkbox">
+    <h1>체크가 되면 나타납니다</h1>
+</body>
+</html>

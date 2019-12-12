@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .gallary {}
+
+        .gallary::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .gallary>.gallary-item {
+            float: left;
+            width: 25%;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .gallary>.gallary-item>.gallary-text {
+            word-break: break-all;
+            text-align: center;
+            border: 3px black;
+        }
+
+        .gallary>.gallary-item>.gallary-image>img {
+            width: 100%;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .gallary>.gallary-item:hover {}
+
+        .gallary>.gallary-item:hover>.gallary-image>img {
+            opacity: 1;
+        }
+
+        .gallary>.gallary-item:hover>.gallary-text> {
+            border: 3px black;
+        }
+
+        /* 테스트용 스타일 */
+        /*
+        .gallary, .gallary-text{
+            border:1px dotted black;
+        }
+        .gallary-item{
+            border:1px dotted red;
+        }
+        .gallary-image{
+            border:1px dotted blue;
+        }
+*/
+    </style>
+</head>
+
+<body>
+
+    <div class="gallary">
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/animals">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/nature">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/people">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+        <div class="gallary-item">
+            <div class="gallary-image">
+                <img src="http://placeimg.com/480/480/tech">
+            </div>
+            <div class="gallary-text">
+                <h4>Lorem Ipsum</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body></html>

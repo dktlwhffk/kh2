@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>쿠팡로그인</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .login-wrap {
+/*            border: 1px dotted black;*/
+            width: 460px;
+            margin: 30px auto;
+             
+        }
+
+        .login-wrap>* {
+            width: 100%;
+            margin: 15px 0px;
+            
+        }
+        .login-wrap>input,
+        .login-wrap>button{
+            padding: 10px;
+            cursor: grab;
+        }
+        .login-wrap>p{
+            text-align: center;
+        }
+        .login-wrap>input[name=id],
+        .login-wrap>input[name=pw]{
+            padding-left: 40px;
+        }
+        .login-wrap>input[type=submit]{
+            background-color: royalblue;
+            color:aliceblue;
+            border: royalblue;
+        }
+        .login-wrap>button{
+            background-color: aliceblue;
+            color: royalblue;
+            border: 1px solid gray;
+        }
+         input[type=text]{
+            background-image: url("mes.png");
+            background-size: 1.5rem 1.5rem;
+            background-position: left;
+            
+            background-repeat: no-repeat;
+        }
+        input[type=password]{
+            background-image: url("lock.png");
+            background-size: 1.5rem 1.5rem;
+            background-position: left;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="login-wrap">
+            <img src="./coupang-logo.png">
+            <input type="text" name="id" placeholder="아이디(이메일)" required>
+            <input type="password" name="pw" placeholder="비밀번호" required>
+            <input type="submit" value="로그인">
+            <hr>
+            <button>회원가입</button>
+            <p>
+                &copy; Coupang Corp. All rights reserved.
+            </p>
+        </div>
+    </form>
+</body></html>

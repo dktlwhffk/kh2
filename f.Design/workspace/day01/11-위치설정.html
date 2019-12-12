@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>영역의 위치 설정</title>
+    <style>
+        body{
+            height:50000px;
+        }
+        div{
+            width:150px;
+            height:150px;
+            position:absolute;
+        }
+        .a{
+            background-color:red;
+            top:50px;
+            left:50px;
+            z-index:50;
+        }
+        .b{
+            background-color:yellow;
+            top:100px;
+            left:100px;
+            z-index:20;
+        }
+        .c{
+            background-color:blue;
+            top:150px;
+            left:150px;
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a">a 영역</div>
+    <div class="b">b 영역</div>
+    <div class="c">c 영역</div>
+
+</body>
+</html> 

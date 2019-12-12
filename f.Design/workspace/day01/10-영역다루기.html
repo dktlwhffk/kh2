@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>영역 속성 다루기</title>
+    <style>
+        /*
+            display 속성
+            - 표시되는 영역의 속성
+            - none, inline, inline-block, block
+            - none은 표시를 하지 않겠다는 뜻
+            - inline은 내용에 맞게 표시하겠다는 뜻(폭 지정 불가)
+            - block은 폭을 지정하여 사용하겠다는 뜻(1줄에 1개)
+            - inline-block은 inline같은 block이다.
+        */
+        
+        span{
+/*            display: block;*/
+/*            display:inline;*/
+        }
+        
+        p > .important{
+            background-color: yellow;
+            color:red;
+            text-decoration: underline;
+        }
+        
+        .menu{
+            display: none;
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>div 영역입니다</div>
+    <div>div 영역입니다</div>
+    <div>div 영역입니다</div>
+
+    <p>p 영역입니다</p>
+    <p>p 영역입니다</p>
+    <p>p 영역입니다</p>
+
+    <span>span 영역입니다</span>
+    <span>span 영역입니다</span>
+    <span>span 영역입니다</span>
+
+    <!-- inline 사용 예 -->
+    <p>
+        나는 오늘 저녁에 무조건 <span class="important">피자</span>를 먹겠다!        
+    </p>
+
+    <!-- inline-block 사용 예 -->
+    <div class="menu">div 영역입니다</div>
+    <div class="menu">div 영역입니다</div>
+    <div class="menu">div 영역입니다</div>
+
+</body>
+</html>

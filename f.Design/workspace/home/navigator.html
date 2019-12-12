@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>네비게이터</title>
+    <style>
+        .page-navigator {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        .page-navigator {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .page-navigator>li {
+            float: left;
+            background-color: midnightblue;
+            color: white;
+            padding: 1rem;
+        }
+
+        .page-navigator>li.active {
+            background-color: darkblue;
+        }
+
+        .page-navigator>li>a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .page-navigator>li>a:hover {
+            color: yellowgreen;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="page-navigator">
+        <li><a href="#">이전</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#">다음</a></li>
+    </ul>
+</body>
+
+</html>

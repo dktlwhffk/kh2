@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트 태그의 활용</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .custom-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+
+            width: 150px;
+        }
+
+        .custom-list>li {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .custom-list li:hover {
+            background-color: gray;
+            color: black;
+        }
+
+        /*        2차이상의 메뉴 스타일*/
+        .custom-list ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+
+            position: absolute;
+            margin-left: 135px;
+            margin-top: -36px;
+
+            /*            2차 이상의 메뉴는 처음에 숨김 처리*/
+            display: none;
+        }
+
+        .custom-list ul>li {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            width: 150px;
+        }
+
+        /*
+            메뉴를 표시하는 방법
+            1:hover
+            2:checked
+        */
+
+        .custom-list li:hover>ul {
+            display: block;
+        }
+        
+        /*
+        overflow 설정(넘침 설정)
+        -숨김처리+줄바꿈금지+말줄임표 설정
+        */
+        .custom-list li{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="custom-list">
+        <li>운영체제</li>
+        <li>
+            데이터베이스 asdasdasdasdasd
+            <ul>
+                <li>관리자명령</li>
+                <li>사용자관리</li>
+                <li>테이블관리</li>
+                <li>데이터관리</li>
+            </ul>
+        </li>
+        <li>네트워크</li>
+        <li>
+            자바
+            <ul>
+                <li>조건문</li>
+                <li>반복문</li>
+                <li>배열</li>
+                <li>클래스</li>
+                <li>상속</li>
+            </ul>
+        </li>
+        <li>웹서버</li>
+        <li>웹디자인</li>
+    </ul>
+</body></html>

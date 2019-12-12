@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    font-family: melona;
+}
+
+@font-face {
+    font-family: maplestory;
+    src: url("../font/Maplestory Light.ttf");
+}
+
+@font-face {
+    font-family: melona;
+    src: url("../font/BinggraeMelona.ttf");
+}
+
+@font-face {
+    font-family: maplestorybold;
+    src: url("../font/Maplestory Bold.ttf");
+}
+
+/*
+테이블스타일
+-table: 기본테이블스타일
+-table hover: 마우스가 올라간 줄에 하이라이트 적용
+-table stripe: 2줄마다 한줄씩 하이라이트 적용
+*/
+
+.table {
+    width: 100%;
+    border: 1px solid black;
+
+    /*            테두리 병합*/
+    border-collapse: collapse;
+}
+
+.table > thead > tr > td,
+.table > thead > tr > th,
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+/* 확장디자인 stripe*/
+.table.table-stripe > tbody > tr:nth-child(2n) {
+    background-color: aqua;
+}
+
+/* 확장디자인 hover*/
+.table.table-hover > tbody > tr:hover {
+    background-color: aqua;
+}
+
+/*
+    모달 화면 디자인
+    -초기에는 미표시 상태로 구현되어 있음
+    -.modal에 display:block으로 변경하면 표시됨
+    -모달창의 투명도는 50%(0.5)
+    -모달화면 크기는 300x400(조정 가능)
+*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-color: black;*/
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /*display: none;*/
+}
+
+.modal > .modal-view {
+    position: fixed;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+
+    /* 가운데 배치 */
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -200px;
+}
+
+/*
+    사이드메뉴 스타일
+    -리스트 형태로 계층 구조를 구현한 사이드 메뉴 스타일
+    -hover 상황에서 하위 메뉴가 펼쳐짐
+*/
+.custom-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+
+    width: 150px;
+}
+
+.custom-list > li {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.custom-list li:hover {
+    background-color: gray;
+    color: black;
+}
+
+/*2차이상의 메뉴 스타일*/
+.custom-list ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    position: absolute;
+    margin-left: 135px;
+    margin-top: -36px;
+
+    /*2차 이상의 메뉴는 처음에 숨김 처리*/
+    display: none;
+}
+
+.custom-list ul > li {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    width: 150px;
+}
+
+/*
+메뉴를 표시하는 방법
+ 1:hover
+ 2:checked
+*/
+
+.custom-list li:hover > ul {
+    display: block;
+}
+
+/*
+overflow 설정(넘침 설정)
+-숨김처리+줄바꿈금지+말줄임표 설정
+*/
+.custom-list li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+/*메뉴스타일*/
+ .menu {
+            background-color: black;
+        }
+
+        .menu.menu-fixed {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+
+        .menu>.menu-item {
+
+            color: whitesmoke;
+            padding: 1rem;
+        }
+
+        .menu>.left-menu {
+            float: left;
+        }
+
+        .menu>.right-menu {
+            float: right;
+        }
+
+        .menu::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .menu a {
+            text-decoration: none;
+            /*밑줄제거*/
+        }
+
+        .menu a:hover {
+            color: gray;
+        }
+
+        .menu>label {
+            font-size: 2rem;
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+
+            display: none;
+        }
+
+        .menu>#hamburg {
+            display: none;
+        }
+
+        .menu>#hamburg:checked~.menu-item {
+            display: block;
+        }
+
+/*
+        @media screen and (max-width:720px) {
+            .menu>label {
+                display: block;
+            }
+
+            .menu>.menu-item {
+                display: none;
+                width: 100%;
+            }
+
+            .menu>/.right-menu {
+                float: left;
+            }
+        }
+*/
+
+        .menu>.menu-item:hover {
+            background-color: aqua;
+        }
+
+
+        body {
+            height: 50000px;
+        }

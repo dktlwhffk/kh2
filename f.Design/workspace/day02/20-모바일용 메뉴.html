@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .menu {
+            background-color: black;
+        }
+
+        .menu>.menu-item {
+            color: whitesmoke;
+            padding: 1rem;
+
+            width: 100%;
+            display: none;
+        }
+
+        .menu>.left-menu {
+            float: left;
+        }
+
+        .menu>.right-menu {
+            float: left;
+        }
+
+        .menu::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .menu a {
+            text-decoration: none;
+            /*밑줄제거*/
+        }
+
+        .menu a:hover {
+            color: gray;
+        }
+
+        .menu>label {
+            font-size: 2rem;
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .menu>#hamburg {
+            display: none;
+        }
+        .menu>#hamburg:checked~.menu-item{
+            display: block;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <label for="hamburg">&equiv;</label>
+        <input type="checkbox" id="hamburg">
+        <a href="#" class="menu-item left-menu">메뉴1</a>
+        <a href="#" class="menu-item left-menu">메뉴2</a>
+        <a href="#" class="menu-item left-menu">메뉴3</a>
+        <a href="#" class="menu-item right-menu">메뉴4</a>
+        <a href="#" class="menu-item right-menu">메뉴5</a>
+    </div>
+</body></html>

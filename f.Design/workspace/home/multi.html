@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>다단 레이아웃</title>
+    <style>
+        .row-multi {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .row-multi::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .row-multi>* {
+            float: left;
+        }
+
+        .row-multi.col-2>* {
+            width: 50%;
+        }
+
+        .row-multi.col-3>* {
+            width: 33.3333%;
+        }
+
+        .row-multi.col-4>* {
+            width: 25%;
+        }
+
+        .row-multi.col-5>* {
+            width: 20%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--    2단 레이아웃-->
+    <div class="row-multi col-2">
+        <button>1</button>
+        <button>2</button>
+    </div>
+    <!--    3단 레이아웃-->
+    <div class="row-multi col-3">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+    <!--    4단 레이아웃-->
+    <div class="row-multi col-4">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+    </div>
+
+</body>
+
+</html>
