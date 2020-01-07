@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>window 내장객체</title>
+    <script>
+        function goNaver() {
+            //confirm(): 확인창
+            var choice = window.confirm("확실해?\n그럼 확인눌러 ㅋ");
+            // console.log(choice);
+            if (choice) {
+                location.href = "http://www.naver.com";
+            }
+        }
+
+        function openWindow() {
+            //새창열기: open(), 새창닫기: close()
+            // open();
+            // open("http://www.sysout.co.kr");
+            // open("http://www.sysout.co.kr","","width=300, height=300");
+            var a = open("http://www.sysout.co.kr", "sample", "width=300, height=300");
+            // a.close();
+             window.close(); //자기자신은 닫을 수 없음
+        }
+       
+    </script>
+</head>
+
+<body>
+    <button onclick="goNaver();">확인창</button>
+    <button onclick="openWindow();">새창</button>
+    <button onclick="location.reload()">새로고침</button>
+    <button onclick="history.back()">뒤로가기</button>
+</body>
+
+</html>

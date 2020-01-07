@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //시작과 동시에 test03.xml을 불러와서 화면에 출력
+            $.ajax({
+                url:"./test03.xml",
+                dataType:"xml",//내가 원하는 결과 유형(나머지는 에러)
+                success:function(resp){
+                    //console.log(resp);
+                    var student = $(resp).find("student");
+                    console.log(student);
+                    var name = student.find("name").text();
+                    var gender = student.find("gender").text();
+                    var korean = student.find("korean").text();
+                    var english = student.find("english").text();
+                    var math = student.find("math").text();
+                    
+                    $("body").append(name+"<br>");
+                    $("body").append(gender+"<br>");
+                    $("body").append(korean+"<br>");
+                    $("body").append(english+"<br>");
+                    $("body").append(math+"<br>");
+                    
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

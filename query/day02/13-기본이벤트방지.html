@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>기본이벤트 제어하기</title>
+    <script>
+        function test(){
+            //이 함수는 a태그와 연결된 함수
+            //a태그의 기본 진행 내용을 막아야 한다
+            //event 내장객체를 사용
+            
+            //페이지 이동명령(주소창 값 변경하기)
+            location.href="http://www.naver.com";
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    
+    <a href="http://www.google.com" onclick="test();">구글로 이동</a>
+
+</body>
+</html>

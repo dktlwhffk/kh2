@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>전체선택 구현</title>
+    <script>
+        //반복되는 지겨운 작업들을 줄이기 위한 올인원 함수 생성
+        //이름: kQuery
+        //매개변수: 선택자(selector)
+        function kQuery(selector){
+            //사용자가 집어넣은 string 으로 태그 목록을 생성
+            var taglist = document.querySelectorAll(selector);
+
+            //사용자가 필요하리라고 예상되는 기능을 객체로 만들어 반환(closer)
+            return{
+                //이름:function(){}
+                //[1] 이벤트 설정 대행 기능 -on(종류, 코드)
+                on:function(type, code){
+                    for(var i=0; i<taglist.length; i++){
+                        taglist[i].addEventListener(type,code);
+                    }
+                },
+                //[2] 전체 체크 설정/해제
+                check:function(isCheck){
+                    for(var i=0; i<taglist.length; i++){
+                        taglist[i].checked = isCheck;
+                    }
+                },
+            };
+        };
+        window.addEventListener("load", function(){
+            //#check-all에 change 이벤트를 설정
+            var $ = kQuery;
+            $("#check-all").on("change", function(){
+                $(".check-item").check(this.checked);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="check-all">전체선택
+    <hr>
+    <input type="checkbox" class="check-item">사과<br>
+    <input type="checkbox" class="check-item">바나나<br>
+    <input type="checkbox" class="check-item">포도<br>
+    <input type="checkbox" class="check-item">파인애플<br>
+    <input type="checkbox" class="check-item">망고<br>
+</body>
+</html>

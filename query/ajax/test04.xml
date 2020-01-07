@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student-list>
+    <student>
+        <name>홍길동</name>
+        <gender>남자</gender>
+        <korean>50</korean>
+        <english>70</english>
+        <math>65</math>
+    </student>
+
+    <student>
+    <name>김용범</name>
+    <gender>남자</gender>
+    <korean>80</korean>
+    <english>100</english>
+    <math>70</math>
+    </student>
+
+    <student>
+        <name>이소룡</name>
+        <gender>여자</gender>
+        <korean>10</korean>
+        <english>20</english>
+        <math>35</math>
+    </student>
+</student-list>
+

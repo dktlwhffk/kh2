@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".add-btn").click(function(){
+                //div - input + button
+
+                var div=$("<div");
+                var input = $("<input>")
+                var button = $("button")
+
+                //div에 버튼 추가 or 버튼
+                div.append(input);
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="add-btn">추가</button>
+    <form class="result form"></form>
+</body>
+</html>

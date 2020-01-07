@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //    var a = {
+            //        name:"홍길동",
+            //        score:100
+            //    }
+            //    for(var n in a){
+            //        console.log(n);
+            //        console.log(a[n]);
+            //        console.log(a["name"]);
+            //    }
+            $.ajax({
+                url: "./test09.json",
+                dataType: "json",
+                success: function (resp) {
+                    //resp의 변수목록을 구해온다
+                    for (var n in resp) {
+                        $("<option>").text(n).appendTo(".region");
+                    }
+                    $(".region").change(function () {
+                        var city = $(this).val();
+                        $.ajax({
+                            url: "./test09.json",
+                            dataType: "json",
+                            success: function (resp) {
+                                $(".section").empty();
+                                $("<option>").text("구를 선택하세요").appendTo(".section");
+                                // console.log(resp[city]);
+                                $(resp[city]).each(function () {
+                                    $("<option>").text(this).appendTo(".section");
+                                });
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <select class="region">
+        <option>지역을 선택하세요</option>
+    </select>
+    <select class="section">
+        <option>구를 선택하세요</option>
+    </select>
+</body>
+
+</html>

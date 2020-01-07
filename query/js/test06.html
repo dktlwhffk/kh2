@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>전구</title>
+    <script>
+        window.addEventListener("load", function(){
+                var on = document.querySelector("img");
+                    //on.src = "../이미지/on.gif";
+                //var off = document.querySelector("img");
+                    //off.src = "../이미지/off.gif";
+                var onoff = document.querySelector(".onoff")
+            onoff.addEventListener("click", function(){
+            var toggle = false;
+                if(toggle){
+                    var status = document.querySelector("img");
+                    status.src = "../이미지/off.gif";
+                    toggle = true;
+                }
+                else{
+                    var status = document.querySelector("img");
+                    status.src = "../이미지/on.gif";
+                    toggle = false;
+                }       
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <img src="../이미지/off.gif">
+        
+    <button class="onoff">스위치</button>
+
+</body>
+</html>

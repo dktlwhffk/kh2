@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 this</title>
+    <script>
+        window.addEventListener("load", function(){
+            //시작시 수행할 코드
+            //-버튼에 클릭이벤트 설정
+
+            var btn = document.querySelector(".click-btn");
+            btn.addEventListener("click",function(){
+                //console.log(this); //this(주인공) == btn
+                this.innerText = "잘했어!";
+                //console.log(this.disabled);
+                this.disabled = true;
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="click-btn">눌러봐!</button>
+</body>
+</html>

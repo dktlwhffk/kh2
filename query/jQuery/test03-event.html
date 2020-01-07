@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+        //목표: 버튼을 누르면 특정 코드가 실행되도록 설정
+        //-자바스크립트의 addEventListener
+        //-설정: on, 해제: off
+        //$(".click-btn").on("click", function(){});
+        $(".click-btn").click(function(){
+        // console.log("클릭!");
+        // 클릭할 때마다 버튼(this)의 글자크기를 1씩 증가
+           
+        //console.log($(this).css("font-size"));
+        //px 떼고 숫자로 바꾼뒤 +1 해서 다시 px를 붙여서 설정
+        var origin = $(this).css("font-size");//13.3333px
+        origin.substring(0, origin.length-2);
+        origin = parseInt(origin);
+        origin = origin + 1;
+        origin = origin + "px";
+
+        $(this).css("font-size", origin);
+        });
+    });
+    </script>
+</head>
+<body>
+    <button class="click-btn">눌러봐!</button>
+</body>
+</html>

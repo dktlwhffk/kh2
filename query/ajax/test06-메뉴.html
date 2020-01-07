@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "./test06.xml",
+                dataType: "xml",
+                success: function (resp) {
+                    // console.log(resp);
+
+                    var menu = $(resp).find("menu");
+                    // console.log(menu);
+                    menu.each(function () {
+                        var name = $(this).find("name").text();
+                        var submenu = $(this).find("submenu").text();
+
+                        // console.log(name);
+                        // console.log(submenu);
+                       
+                        var a = $("<a>").text(name);
+                        var li = $("<li>");
+                        li.append(a).appendTo(".menu");
+
+                        //서브메뉴 태그 읽어오기
+                        var subul=$("<ul>");
+                        $(this).find("submenu").each(function(){
+                            var subli = $("<li>").text($(this).text());
+                            subul.append(subli);
+                        });
+                        li.append(subul);
+
+                        li.click(function(){
+                            $(this).children("ul").slideToggle();
+                            //표시/숨김 처리를 할 때 유용한 jQuery 명령
+                            //-slideDown() / slideUp() / slideToggle()
+                            //-faedIn() / fadeout() / fadeToggle()
+                    });
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="menu">
+        
+    </ul>
+</body>
+
+</html>

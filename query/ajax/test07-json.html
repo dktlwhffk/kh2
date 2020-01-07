@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //목표: test07.json 파일을 읽어와 정보에 접근
+            $.ajax({
+                url:"./test07.json",
+                dataType:"json",
+                success:function(resp){
+                    console.log(resp);
+                    console.log(resp.name);
+                    console.log(resp.gender);
+                    console.log(resp.korean);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

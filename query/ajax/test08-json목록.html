@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //test08.json의 내용을 불러와서 요소별로 접근
+            $.ajax({
+                url:"./test08.json",
+                type:"get",
+                dataType:"json",
+                success:function(resp){//성공코드
+                    // console.log(resp);
+
+                    // for(var i=0; i<resp.length; i++){
+                    //     console.log(resp[i]);
+                    // }
+                    $.each(resp, function(){
+                        console.log(this)
+                        console.log(this.name);
+                        console.log(this.gender);
+                        console.log(this.korean);
+                        console.log(this.english);
+                        console.log(this.math);
+                    });
+                },
+                error:function(){//실패코드
+                    
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

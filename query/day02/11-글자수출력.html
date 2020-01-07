@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>입력 글자수 표시</title>
+    <script>
+        function check(){
+            //1.입력창 글자를 가져온다.
+            //2.글자 길이를 계산한다.
+            //3.계산된 길이를 결과창에 출력한다
+            var a = document.querySelector("textarea");
+            var b = document.querySelector(".text-length");
+            
+            var len = a.value.length;
+            b.innerText=len;
+            
+            if(len>100){
+                window.alert("100글자 이내로만 작성이 가능합니다.")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h2>자기소개서</h2>
+    <p>
+            지원 동기가 무엇?
+    </p>
+    <textarea rows="5" cols="80" oninput="check();"></textarea>
+    <br>
+    <span class="text-length">0</span>/100
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //목표: test04.xml의 목록을 불러와 출력
+            $.ajax({
+                url:"./test04.xml",
+                dataType:"xml",
+                success:function(resp){
+                    //console.log(resp);
+                    var student = $(resp).find("student");
+                    //console.log(student);
+                    
+                    //student는 배열이고 우리는 "각각" 처리해야함
+                    //반복문을 사용하여 student를 펼쳐서 처리
+
+                    //$.each(student, function(){});
+                    student.each(function(){
+                        var name= $(this).find("name").text();
+                        var gender = $(this).find("gender").text();
+                        var korean = $(this).find("korean").text();
+                        var english =$(this).find("english").text();
+                        var math = $(this).find("math").text();
+
+                        $("body").append(name+"<br>");
+                        $("body").append(gender+"<br>");
+                        $("body").append(korean+"<br>");
+                        $("body").append(english+"<br>");
+                        $("body").append(math+"<br>");
+                        $("body").append("<br>");
+                    });
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

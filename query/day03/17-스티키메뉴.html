@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./common.css">
+    <style>
+        body {
+            height: 50000px;
+        }
+    </style>
+    <script>
+        function change() {
+            //목표: 일정 수준 이상의 스크롤이 내려간다면  menu-fixed 추가
+            var menu = document.querySelector(".menu");
+            if (window.scrollY >= 80) {
+                menu.classList.add("menu-fixed");
+            } else {
+                menu.classList.remove("menu-fixed");
+            }
+        }
+    </script>
+</head>
+
+<body onscroll="change();">
+    <h1>상단 로고 & 검색창 등등</h1>
+    <div class="menu">
+        <label>&equiv;</label>
+        <input type="checkbox" id="hamburg">
+        <a href="#" class="menu-item menu-left">메뉴1</a>
+        <a href="#" class="menu-item menu-left">메뉴2</a>
+        <a href="#" class="menu-item menu-right">메뉴3</a>
+        <a href="#" class="menu-item menu-right">메뉴4</a>
+        <a href="#" class="menu-item menu-right">메뉴5</a>
+
+    </div>
+</body>
+
+</html>

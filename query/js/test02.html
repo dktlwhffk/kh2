@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Standalone</title>
+    <script>
+        //이 시점에는 html이 생성되지 않았다(dom 구축x)
+        //-해결책: 다 로딩되면 실행하도록 만든다(지연실행)
+        //-[1] window의 onload라는 속성을 설정
+        //-[2] window에 load 이벤트를 설정
+        function init(){
+            console.log(window);
+            console.log(document.querySelector("button"));
+
+            //버튼에 onclick을 설정
+            //.addEventListener(이벤트 종류, 처리 코드);
+            var btn = document.querySelector("button");
+            btn.addEventListener("click", hello);
+        }
+
+        function hello(){
+            alert('잘했어!');
+        }
+
+        window.onload = init //예약 실행 설정(callback)
+        //window.onload = init(); //실행 결과 대입
+
+
+    </script>
+</head>
+<body>
+    <button class="btn btn-primary">눌러봐!</button>
+</body>
+</html>

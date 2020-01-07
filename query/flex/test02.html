@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>홈페이지 레이아웃</title>
+    <style>
+        main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header{
+            background-color:violet;
+            width: 100%;
+        }
+        aside{
+            background-color: seagreen;
+            width: 150px;
+        }
+        section{
+            background-color: aquamarine;
+            flex-grow: 1;
+            min-height: 300px;
+        }
+        footer{
+            background-color: blanchedalmond;
+            width: 100%;
+        }
+        
+        /*모바일 대응 스타일*/
+        @media screen and (max-width: 640px){
+            main{
+                flex-direction: column;
+            }
+            aside{
+                width: 100%;
+            }
+            header{
+                order:1;
+            }
+            aside{
+                order:3;
+            }
+            section{
+                order:2;
+            }
+            footer{
+                order:4;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>헤더</header>
+        <aside>사이드</aside>
+        <section>섹션</section>
+        <footer>푸터</footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>편집기 꾸미기</title>
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <style>
+        #sample {
+            width: 100%;
+            height: 150px;
+        }
+    </style>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/assets/css/suneditor.css" rel="stylesheet"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/assets/css/suneditor-contents.css" rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <!-- languages (Basic Language: English/en) -->
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+    <script>
+        function loadEditor() {
+            var editor = SUNEDITOR.create((document.querySelector('#sample')), {
+                //언어 설정
+                lang: SUNEDITOR_LANG['ko'],
+
+                
+                //버튼설정
+                buttonList:[
+                    ['font','fontSize','fontColor','formatBlock']
+                ],
+                //글꼴 설정
+                font:[
+                    '굴림','궁서','Verdana','Arial'
+                ],   
+                //크기설정
+                fontSize:[
+                    10,16,32
+                ],
+                //글자색
+                fontColor:[
+
+                ]
+            });
+        }
+    </script>
+</head>
+
+<body onload="loadEditor()">
+    <textarea id="sample">Hi</textarea>
+</body>
+
+</html>

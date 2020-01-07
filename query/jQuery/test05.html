@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //목표: 입력창의 글자수를 세어 하단에 출력
+        //[1] .editor 의 value를 불러온다
+        //[2] 1번 값의 길이를 계산
+        //[3] .count의 글자로 출력
+
+        $(function(){
+            $(".editor").on("input", function(){
+                var v = $(this).val();
+                //console.log(text);
+
+                //.panel 안의 .count에 text.length를 출력
+                $(".panel>.count").text(v.length);
+
+                var regex = /^.{1,100}$/;
+                console.log(regex.test(v));
+                if(regex.test(v)){
+                    $(".count").css("color", "black");
+                }
+                else {
+                    $(".count").css("color", "red");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <textarea class="editor"></textarea>
+    <div class="panel">
+        <span class="count">?</span> / 100
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex Layout</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /* float의 필수 스타일 */
+        .float-wrap::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .item1{
+            background-color: teal;
+            float: left;
+            width: 33.33333333333333333333333333%;
+            height: 100px;
+        }
+        .item2{
+            background-color:thistle;
+            float: left;
+            width: 33.33333333333333333333333333%;
+            height: 200px;
+        }
+        .item3{
+            background-color:tomato;
+            float: left;
+            width: 33.33333333333333333333333333%;
+            height: 300px;
+        }
+        .flex-wrap{
+                display: flex;
+                flex-direction: row;
+            }
+        @media screen and (max-width:640px){
+            .flex-wrap{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .item4{
+            background-color: teal;
+            flex-grow: 1;
+            height: 200px;
+        }
+        .item5{
+            background-color:thistle;
+            flex-grow: 1;
+        }
+        .item6{
+            background-color:tomato;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <!--float를 이용한 화면 구현-->
+    <div class="float-wrap">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+    <hr>
+     <!--flex를 이용한 화면 구현-->
+     <div class="flex-wrap">
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div>
+</body>
+</html>

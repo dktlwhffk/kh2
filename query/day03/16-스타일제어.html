@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스타일 제어하기</title>
+
+    <style>
+        /* 긍정스타일 */
+        .positive{
+            color:blue;
+        }
+        /* 부정스타일 */
+        .negative{
+            color: red;
+        }
+    </style>
+
+    <script>
+        function positive(){
+            var tag=document.querySelector("p");
+            // tag.style="color:blue";
+            // tag.style.color = "blue";
+            // 클래스는 여러개를 부여할 수 있고 체계적으로 관리되어야 하므로 일괄설정이 안됨
+            // -classList라는 항목을 이용하여 관리
+            //  1.add(): 클래스 항목을 추가
+            //  2.remove(): 클래스 항목을 제거
+            //  3.contains(): 존재여부 확인 
+
+            // tag.class="positive"; 불가능
+            tag.classList.remove("negative");
+            tag.classList.add("positive");
+        }
+        function negative(){
+            var tag=document.querySelector("p");
+            // tag.style.color="red";
+            tag.classList.remove("positive");
+            tag.classList.add("negative");
+            
+        }
+    </script>
+
+</head>
+<body>
+    
+    <button onclick="positive();">긍정</button>
+    <button onclick="negative();">부정</button>
+
+    <p>
+        이곳은 입력에 대한 결과가 나오는 메시지 영역입니다.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>입력창</title>
+    <script>
+        //목표: 입력 시 글자수를 검사하여 8~20자 사이면 파란색 테두리, 아니면 빨간색 테두리
+        function validate(){
+            var tag = document.querySelector("input[name=id]");
+            // console.log(tag);
+            var len = tag.value.length;
+            if(len>=8 && len<=20){//정상
+                tag.style.border = "1px solid blue";
+            }else{//이상
+                tag.style.border = "1px solid red";
+            }
+        }''
+        function validate2(){
+            var tag = document.querySelector("input[name=id2]");
+            // console.log(tag);
+            var len = tag.value.length;
+            if(len>=8 && len<=20){//정상
+                tag.style.border = "1px solid blue";
+            }else{//이상
+                tag.style.border = "1px solid red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="id" oninput="validate();">
+    <br>
+    <input type="text" name="id2" onblur="validate2();">
+</body>
+</html>

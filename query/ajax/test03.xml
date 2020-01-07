@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student>
+    <name>홍길동</name>
+    <gender>남자</gender>
+    <korean>50</korean>
+    <english>70</english>
+    <math>65</math>
+</student>

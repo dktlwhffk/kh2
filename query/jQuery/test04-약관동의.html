@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery약관동의</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // $(function(){
+        //     if($(".approval").prop("checked")){
+        //         $(".approval").change(function(){
+        //             $("<p>다음으로 이동</p>").replaceAll(".disapproval");        
+        //         })
+        //     }
+        //     else{
+        //         $("진행하려면 약관에 동의해주세요")
+        //     }
+        // });
+        $(function(){
+            if(!$(".approval").prop("checked")){
+                $(".disaprroval").prop("disabled", false).text("진행하려면 약관에 동의해주세요"); 
+                
+            }
+            else{
+                $(".disaprroval").prop("disabled", true).text("다음 단계로 이동");
+            }
+        })
+
+    </script>
+</head>
+<body>
+    <table border="1px" style="border: beige; border-style: solid;">
+        <tr>
+            <td>
+                이용약관
+            </td>
+        </tr>
+        <tr>
+            <td>
+                로렘 입숨은 전통 라틴어와 닮은 점 때문에 종종 호기심을 유발하기도 하지만 그 이상의 의미를 담지는 않는다. 문서에서 텍스트가 보이면 사람들은 전체적인 프레젠테이션보다는 텍스트에 담긴 뜻에 집중하는 경향이 있어서 출판사들은 서체나 디자인을 보일 때는 프레젠테이션 자체에 초점을 맞추기 위해 로렘 입숨을 사용한다.
+            </td>
+        </tr>
+    </table>
+    <input type="checkbox" class="approval">이용약관에 동의합니다
+    <br>
+    <button class="disapproval">진행하려면 약관에 동의해주세요</button>
+</body>
+</html>
