@@ -11,7 +11,7 @@
 <jsp:include page="/template/header.jsp"></jsp:include>
 
 <h2>수정하기</h2>
-	
+	<div>
 	<form action="edit.do" method = "post">
 	<input type = "hidden" name="no" value="<%=dto.getNo() %>">
 	<table border="1">
