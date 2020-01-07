@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>확대축소</title>
+    <script>
+        function zoomin(){
+            var a = document.querySelector("img");
+            console.log(a);
+            a.width = a.width+50;
+            a.height +=50; 
+        }
+        function zoomout(){
+            var a =document.querySelector("img");
+            console.log(a);
+            if(a.width>50){
+                a.width -=50;
+                a.height -=50;
+            }
+        }
+        function reset(){
+            var a = document.querySelector("img");
+            a.width=250;
+            a.height=250;
+        }
+        var flag = false;
+        function toggle(){
+            if(flag){
+                zoomout();
+            }else{
+                zoomin();
+            }
+            flag=!flag;
+        }
+    </script>
+</head>
+<body>
+    <!-- <button onclick="zoomin()">확대</button>
+    <button onclick="zoomout()">축소</button>
+    <button onclick="reset()">초기화</button>
+    <br>
+        <img src="../이미지/on.gif" width="250px" height="250px"> -->
+
+    <button onclick="toggle()"> <img src="../이미지/on.gif"></button>
+</body>
+</html>

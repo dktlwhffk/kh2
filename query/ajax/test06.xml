@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--메뉴-->
+<menu-list>
+    <!--큰 메뉴-->
+    <menu>
+        <name>패션의류/잡화</name>
+        <!--작은 메뉴-->
+        <submenu>남성패션</submenu>
+        <submenu>여성패션</submenu>
+    </menu>
+    <!--큰 메뉴-->
+    <menu>
+        <name>뷰티</name>
+        <!--작은 메뉴-->
+        <submenu>명품화장품</submenu>
+        <submenu>스킨케어</submenu>
+    </menu>
+</menu-list>

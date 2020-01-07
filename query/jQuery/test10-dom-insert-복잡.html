@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //템플릿 copy 한 뒤 삭제
+            var template = $(".template");
+            var backup = template.clone();
+            template.remove();
+
+            //목표: 추가 버튼 누르면 폼 안에 입력창+삭제버튼 추가
+            $(".add-btn").click(function(){   
+                var copy = backup.clone();
+                copy.insertBefore(".send");
+
+                copy.find("button").click(function(){
+                    $(this).parent().remove();
+                });
+                //copy.appendTo(".result-form");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="add-btn">추가</button>
+    <form class="result-form">
+        <input type="submit" class="send" value="전송">
+    </form>
+
+    <!--템플릿 생성-->
+    <div class="template">
+        <input type="text">
+        <button>삭제</button>
+    </div>
+</body>
+</html>

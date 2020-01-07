@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user-list>
+    <user>
+        <no>1</no>
+        <id>test01</id>
+    </user>
+
+    <user>
+        <no>2</no>
+        <id>test02</id>
+    </user>
+
+    <user>
+        <no>3</no>
+        <id>test03</id>
+    </user>
+    
+    <user>
+        <no>4</no>
+        <id>test04</id>
+    </user>
+
+    <user>
+        <no>5</no>
+        <id>test05</id>
+    </user>
+</user-list>

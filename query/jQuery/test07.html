@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //목표: .result 영역에 태그를 생성해서 추가
+        $(function(){
+            // $(".result").html("<h1>hello1</h1>");
+            // $(".result").html("<h1>hello2</h1>");
+
+            //$("h1"): h1을 선택
+            //$("<h1/>") : h1을 생성(가상태그)
+
+            // $("<h1/>").text("hello1").appendTo(".result");
+            // $("<h1/>").text("hello2").appendTo(".result");
+            // $("<h1/>").text("hello3").appendTo(".result");
+
+            //등록 버튼을 누르면 태그 생성 후 추가 + 입력창 초기화
+            $(".regist-btn").click(function(){
+                $("<h1/>").text($(".user-input").val()).appendTo(".result");
+
+                //입력창 초기화
+                $(".user-input").val("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" class="user-input">
+    <button class="regist-btn">등록</button>
+    <div class="result"></div>
+</body>
+</html>

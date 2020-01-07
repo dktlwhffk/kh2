@@ -1,0 +1,23 @@
+[
+    {
+        "name":"홍길동",
+        "gender":"남",
+        "korean":50,
+        "english":70,
+        "math":65
+    },
+    {
+        "name":"아이언맨",
+        "gender":"남",
+        "korean":100,
+        "english":100,
+        "math":100
+    },
+    {
+        "name":"헐크",
+        "gender":"남",
+        "korean":10,
+        "english":50,
+        "math":20
+    }
+]

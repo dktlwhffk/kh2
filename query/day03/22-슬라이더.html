@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이미지 슬라이더</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/deslider/1.5.1/Deslider.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/deslider/1.5.1/style.css">
+
+    <script>
+        function loadSlider() {
+            var imgSources = [
+                {
+                    link:"http://placehold.it/300x100?text=a",
+                    caption:"테스트 제목1"
+                },
+                {
+                    link:"http://placehold.it/300x100?text=b",
+                    caption:"테스트 제목2"
+                },
+                {
+                    link:"http://placehold.it/300x100?text=c",
+                    caption:"테스트 제목3"
+                }
+               
+            ];
+
+            var containerId = '#deslider-container';
+
+            var options = {
+                auto: {
+                    speed: 3000,
+                    pauseOnHover: true,
+                },
+                fullScreen: true,
+                swipe: true,
+                pagination: true,
+                repeat: true
+            };
+
+            var myDeslider = new Deslider(imgSources, containerId, options);
+        }
+    </script>
+
+
+</head>
+
+<body onload="loadSlider();">
+    <!-- 이미지 슬라이더 영역 -->
+    <div id="deslider-container"></div>
+    <img src="function link() { [native code] }">
+</body>
+
+</html>
+
+<!-- 지켜보고있다... 항상 뒤를 조심할 것. -->

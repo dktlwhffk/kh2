@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>jquery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $(".inputid").blur(function(){
+
+                $.ajax({
+                    url: "./test05.xml",
+                    dataType: "xml",
+                    success: function(resp){
+                        
+                        var result = false;
+                        $(resp).find("id").each(function () {
+                            var text = $(".inputid").val();
+                            var id = $(this).text();
+                            if (id===text) {
+                                result= true;
+                            } 
+                        });
+                        console.log(result);
+                        if(result){
+                            $(".inputid").next().text("이미 사용중인 아이디입니다.");
+                        }
+                        else{
+                            $(".inputid").next().text("사용할 수 있는 아이디입니다.");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label for="id-input">ID</label>
+            <input type="text" class="inputid" placeholder="아이디">
+            <span></span>
+        </div>
+    </form>
+</body>
+
+</html>

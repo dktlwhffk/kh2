@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>객체 생성</title>
+    <script>
+        //자바스크립트
+        //1.정적방식-같은 유형이어도 타입이 같다고 보기 어렵다(1회용 느낌-간단하게할때)
+        //2.동적방식(지속적으로 재사용할때)
+        var a = {
+            name: "홍길동",
+            score: 100
+        };
+        
+        //생성자 함수(자바 생성자)
+        //this는 실행되는 코드의 주인공
+        function Student(name,score){
+            this.name=name;
+            this.score=score;
+        }
+        var c = new Student("이오리", 50);
+        var d = new Student("장거한", 77);
+        console.log(a);
+        console.log(c);
+        console.log(d);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

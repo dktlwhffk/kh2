@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<title>Kakao 지도 시작하기</title>
+</head>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9277a2024e2a70c13c62bdf320db7085">
+</script>
+<script>
+	function loadMap() {
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.540325, 126.647091),
+			level: 4
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+		//지도에 마커 추가하기
+		//-마커를 추가하려면 반드시 위도/경도를 알아야한다.
+		var location = new kakao.maps.LatLng(37.540325, 126.647091);
+		var marker = new kakao.maps.Marker({
+			//이름:값 의 형태로 정보를 설정
+			position: location //position 속성에 location 설정
+		});
+
+		marker.setMap(map);
+
+		var info =
+			'<div style="padding:5px;">Hello World!' +
+			'<br><a href="https://map.kakao.com/link/map/Hello World!,37.540325, 126.647091" style="color:blue" target="_blank">큰지도보기</a>' +
+			'<a href="https://map.kakao.com/link/to/Hello World!,37.540325, 126.647091" style="color:blue" target="_blank">길찾기</a></div>'
+		// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+		var infoposition = new kakao.maps.LatLng(37.540325, 126.647091); //인포윈도우 표시 위치입니다
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+			position: infoposition,
+			content: info
+		});
+
+		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+		//infowindow.open(map, marker);
+
+		// 마커에 마우스오버 이벤트를 등록합니다
+		kakao.maps.event.addListener(marker, 'click', function () {
+			// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+			infowindow.open(map, marker);
+		});
+
+		// 마커에 마우스아웃 이벤트를 등록합니다
+		kakao.maps.event.addListener(marker, 'mouseout', function () {
+			// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+			infowindow.close();
+		});
+
+		kakao.maps.event.addListener(marker, 'rightclick', function () {
+			alert('marker rightclick!');
+		});
+	}
+</script>
+
+
+<body onload="loadMap();">
+	<div id="map" style="width:500px;height:400px;"></div>
+</body>
+
+</html>

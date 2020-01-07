@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>전체선택 구현</title>
+    <script>
+        window.addEventListener("load", function(){
+            //#check-all에 change 이벤트를 설정
+            document.querySelector("#check-all").addEventListener("change", function(){
+                //[1]this(#check-all)의 체크상태를 파악
+                //-> this.checked 
+
+                //[2].check-item을 모두 불러와서 상태를 설정
+                var list = document.querySelectorAll(".check-item");
+                //var list = document.getElementsByClassName("check-item");
+                //console.log(list);
+                for(var i=0; i<list.length; i++){
+                    list[i].checked = this.checked;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="check-all">전체선택
+    <hr>
+    <input type="checkbox" class="check-item">사과<br>
+    <input type="checkbox" class="check-item">바나나<br>
+    <input type="checkbox" class="check-item">포도<br>
+    <input type="checkbox" class="check-item">파인애플<br>
+    <input type="checkbox" class="check-item">망고<br>
+</body>
+</html>

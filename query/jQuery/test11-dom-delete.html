@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //페이지 이탈 방지
+        $(window).on("beforeunload", function(){
+            return false;
+        });
+        $(window).off("beforeunload"); //수행시 해제됨
+        $(function(){
+            $(".btn-delete").click(function(){
+                $(this).parent().parent().remove();
+            });
+
+            $(".btn-edit").click(function(){
+            if($(this).text() == "수정"){
+                var price = $(this).parent().prev();
+                var name = $(this).parent().prev().prev();
+                
+                var pricetext = price.text();
+                var nametext = name.text();
+
+                price.empty();
+                name.empty();
+                
+                $("<input>").val(pricetext).attr("type", "text").appendTo(price); 
+                $("<input>").val(nametext).attr("type", "text").appendTo(name);
+
+                $(this).text("완료");
+            }
+            else{
+                var price = $(this).parent().prev();
+                var name = $(this).parent().prev().prev();
+                
+                var pricetext = price.children().val();
+                var nametext = name.children().val();
+
+                price.empty();
+                name.empty();
+
+                price.text(pricetext);
+                name.text(nametext);
+
+                $(this).text("수정");
+            }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>가격</th>
+                <th>관리</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>스크류바</td>
+                <td>1200</td>
+                <td>
+                    <button class="btn-edit">수정</button>
+                    <button class="btn-delete">삭제</button>
+                </td>
+            </tr>
+            <tr>
+                <td>바밤바</td>
+                <td>1500</td>
+                <td>
+                    <button class="btn-edit">수정</button>
+                    <button class="btn-delete">삭제</button>
+                </td>
+            </tr>
+            <tr>
+                <td>누가바</td>
+                <td>1000</td>
+                <td>
+                    <button class="btn-edit">수정</button>
+                    <button class="btn-delete">삭제</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

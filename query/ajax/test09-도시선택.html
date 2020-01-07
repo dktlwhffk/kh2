@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:"./test09.json",
+                dataType:"json",
+                success:function(resp){
+                        // console.log(resp.서울);
+                        // console.log(resp.부산);
+                    $(resp.서울).each(function(){
+                        $("<option>").text(this).appendTo("#area1");
+                    })
+                    $(resp.부산).each(function(){
+                        $("<option>").text(this).appendTo("#area2");
+                    })
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    서울:  <select id="area1">
+        <option value="">지역선택</option>
+        
+    </select><br>
+    부산:  <select id="area2">
+        <option value="">지역선택</option>
+    </select>
+</body>
+</html>
