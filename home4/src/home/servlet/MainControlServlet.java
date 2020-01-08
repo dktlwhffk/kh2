@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import home.bean.MemberDao;
-import home.bean.MemberDto;
+import home.controller.Controller;
+import home.controller.ControllerFactory;
+import home.controller.IndexController;
+import home.controller.member.MemberLoginController;
 
 /**
  * 중앙 제어 서블릿
@@ -40,43 +42,20 @@ public class MainControlServlet extends HttpServlet{
 			String destination = null;
 			
 			//메인
-			if(uri.equals("/index.do")) {
-				destination = "/WEB-INF/view/index.jsp";
+			
+			//컨트롤러 선택
+			Controller controller = ControllerFactory.create(uri);
+			if(controller == null) {
+				resp.sendError(404);
+				return;
 			}
-			//로그인
-			else if(uri.equals("/member/login.do")) {
-				if(method.equalsIgnoreCase("get")) {
-					destination = "/WEB-INF/view/member/login.jsp";
-				}
-				else if(method.equalsIgnoreCase("post")) {
-//						준비
-					req.setCharacterEncoding("UTF-8");
-					String id = req.getParameter("id");
-					String pw = req.getParameter("pw");
-					
-//						처리
-					MemberDao dao = new MemberDao();
-					boolean result = dao.login(id, pw);
-					
-//						출력
-					if(result) {//로그인 성공 시
-						
-//							session에 아이디와 권한을 저장
-//							session.setAttribute("id", id);
-						req.getSession().setAttribute("id", id);
-						MemberDto dto = dao.get(id);//id를 이용하여 전체 회원정보를 불러온다.
-						req.getSession().setAttribute("grade", dto.getGrade());
-						
-//							추가 : 사용자의 최종 로그인 시각을 수정
-						dao.updateLastLogin(id);
-						
-						destination = "redirect:/index.do";
-					}
-					else {//로그인 실패 시
-//							error 메시지가 표시되는 로그인 화면으로 이동해라
-						destination = "redirect:login.do?error";
-					}
-				}
+			
+			//선택된 컨트롤러에 일을 시킨다
+			if(method.equalsIgnoreCase("get")) {
+				destination = controller.doGet(req, resp);
+			}
+			else if(method.equalsIgnoreCase("post")) {
+				destination = controller.doPost(req, resp);
 			}
 			
 //			[5] 위에서 무슨짓을 해도 상관이 없으니까 문자열 하나만 얻어와서 처리

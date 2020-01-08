@@ -27,7 +27,7 @@
     	</c:when>
     	<c:otherwise>
 		    <a href="${context}/member/login.do" class="menu-item right-menu">로그인</a>
-		    <a href="${context}/member/regist.jsp" class="menu-item right-menu">회원가입</a>
+		    <a href="${context}/member/regist.do" class="menu-item right-menu">회원가입</a>
     	</c:otherwise>
     </c:choose>
     
