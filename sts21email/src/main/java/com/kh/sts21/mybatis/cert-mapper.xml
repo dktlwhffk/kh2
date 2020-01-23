@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cert">
+	
+	<!-- 등록 기능 -->
+	<insert id="regist" parameterType="CertDto">
+		merge into cert  
+		using dual on(email = #{email})
+		when matched then update set cert_no=#{cert_no}, when=sysdate where email=#{email}
+		when not matched then
+		insert(email, cert_no) values(#{email}, #{cert_no}, sysdate)
+	</insert>
+	
+	<!--  인증번호가 존재하는지 검사하는 구문 -->
+	<select id="check"  resultType ="CertDto"  parameterType="map">
+		select*from cert where email=#{email} and cert_no=#{cert_no} and when betwen sysdate-10/24/60 and sysdate
+	</select>
+	<select id = "delete" parameterType="String">
+		delete cert where email=#{email}
+	</select>
+</mapper>
+
+
+
+
+
